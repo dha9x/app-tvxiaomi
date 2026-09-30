@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kho ứng dụng của Hoàng Anh - Xiaomi TV</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <style>
+    /* Ẩn thanh cuộn để giao diện TV sạch sẽ hơn */
+    ::-webkit-scrollbar { width: 0px; }
+    
+    /* ---------------------------------------------------
+       1. GIAO DIỆN TỐI (OLED DARK MODE)
+       --------------------------------------------------- */
+    body {
+      background-color: #000000; /* Đen tuyền dịu mắt */
+    }
+
+    .glass-panel {
+      background: #111111;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .glass-card {
+      background: #161616;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    /* ---------------------------------------------------
+       2. HIỆU ỨNG FOCUS CHO REMOTE TIVI
+       --------------------------------------------------- */
+    .app-card:focus {
+      outline: none;
+      /* Hiệu ứng nổi bật khi dùng remote di chuyển tới */
+      background: #1f1f1f !important;
+      border: 1px solid #fbbf24 !important;
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.3);
+      transform: scale(1.03);
+      z-index: 10;
+    }
+
+    .app-card:focus .btn-download {
+      background-color: #fbbf24 !important; /* Màu vàng sáng */
+      color: #000 !important;
+      box-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+      transform: scale(1.05);
+      border-color: transparent !important;
+    }
+    
+    /* Hiệu ứng cho icon gradient */
+    .icon-box {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body class="text-slate-100 min-h-screen font-sans antialiased overflow-x-hidden p-4 md:p-8">
+
+  <div class="relative z-10 max-w-7xl mx-auto h-full">
+    
+    <!-- HEADER -->
+    <header class="glass-panel rounded-2xl px-6 py-4 flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+      <div>
+        <h1 class="text-2xl md:text-3xl font-extrabold text-amber-400 flex items-center gap-3 tracking-wide drop-shadow-md">
+          <i class="bi bi-box-seam-fill text-3xl"></i>
+          Kho ứng dụng của Hoàng Anh
+        </h1>
+        <p class="text-slate-400 text-sm md:text-base mt-1 flex items-center gap-2">
+          <i class="bi bi-tv text-amber-500"></i>
+          Tổng hợp các app cho tivi Xiaomi
+        </p>
+      </div>
+      
+      <!-- User Badge -->
+      <div class="flex items-center gap-2 bg-[#1a1a1a] px-4 py-2 rounded-full border border-white/10 mt-4 md:mt-0 shadow-lg">
+        <div class="w-6 h-6 rounded-full bg-gradient-to-tr from-amber-400 to-orange-500 flex items-center justify-center text-black font-bold text-xs">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <span class="font-semibold text-sm tracking-wide text-slate-200">Hoàng Anh</span>
+      </div>
+    </header>
+
+    <!-- KHU VỰC CHỨA ỨNG DỤNG -->
+    <main>
+      <div id="app-grid" class="grid grid-cols-1 md:grid-cols-2 gap-5 pb-10">
+
+        <!-- ===== CÁC ỨNG DỤNG ===== -->
+
+        <!-- App 1: DL Store -->
+        <a href="#" class="app-card glass-card rounded-2xl p-4 flex items-center justify-between transition-all duration-300 cursor-pointer group" tabindex="0">
+          <div class="flex items-center gap-4">
+            <div class="icon-box w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white text-3xl">
+              <i class="bi bi-bag-check-fill"></i>
+            </div>
+            <div>
+              <h2 class="font-bold text-lg text-white tracking-wide">DL Store</h2>
+              <p class="text-xs md:text-sm text-slate-400 mt-0.5">Kho ứng dụng tổng hợp</p>
+            </div>
+          </div>
+          <div class="btn-download bg-[#222] border border-white/10 text-white font-bold px-5 py-2.5 rounded-xl flex items-center gap-2 text-sm transition-all duration-300 shrink-0">
+            <i class="bi bi-download"></i> Tải về
+          </div>
+        </a>
+
+        <!-- App 2: Super Voice -->
+        <a href="#" class="app-card glass-card rounded-2xl p-4 flex items-center justify-between transition-all duration-300 cursor-pointer group" tabindex="0">
+          <div class="flex items-center gap-4">
+            <div class="icon-box w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center text-white text-3xl">
+              <i class="bi bi-mic-fill"></i>
+            </div>
+            <div>
+              <h2 class="font-bold text-lg text-white tracking-wide">Super Voice</h2>
+              <p class="text-xs md:text-sm text-slate-400 mt-0.5">Điều khiển bằng giọng nói</p>
+            </div>
+          </div>
+          <div class="btn-download bg-[#222] border border-white/10 text-white font-bold px-5 py-2.5 rounded-xl flex items-center gap-2 text-sm transition-all duration-300 shrink-0">
+            <i class="bi bi-download"></i> Tải về
+          </div>
+        </a>
+
+        <!-- App 3: iMedia Xem Tivi -->
+        <a href="#" class="app-card glass-card rounded-2xl p-4 flex items-center justify-between transition-all duration-300 cursor-pointer group" tabindex="0">
+          <div class="flex items-center gap-4">
+            <div class="icon-box w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-white text-3xl">
+              <i class="bi bi-display-fill"></i>
+            </div>
+            <div>
+              <h2 class="font-bold text-lg text-white tracking-wide">iMedia Xem Tivi</h2>
+              <p class="text-xs md:text-sm text-slate-400 mt-0.5">Ứng dụng xem truyền hình</p>
+            </div>
+          </div>
+          <div class="btn-download bg-[#222] border border-white/10 text-white font-bold px-5 py-2.5 rounded-xl flex items-center gap-2 text-sm transition-all duration-300 shrink-0">
+            <i class="bi bi-download"></i> Tải về
+          </div>
+        </a>
+
+        <!-- App 4: ASmartTube -->
+        <a href="#" class="app-card glass-card rounded-2xl p-4 flex items-center justify-between transition-all duration-300 cursor-pointer group" tabindex="0">
+          <div class="flex items-center gap-4">
+            <div class="icon-box w-14 h-14 rounded-2xl bg-gradient-to-br from-red-500 to-rose-700 flex items-center justify-center text-white text-3xl">
+              <i class="bi bi-youtube"></i>
+            </div>
+            <div>
+              <h2 class="font-bold text-lg text-white tracking-wide">ASmartTube_stable</h2>
+              <p class="text-xs md:text-sm text-slate-400 mt-0.5">Xem Youtube không quảng cáo</p>
+            </div>
+          </div>
+          <div class="btn-download bg-[#222] border border-white/10 text-white font-bold px-5 py-2.5 rounded-xl flex items-center gap-2 text-sm transition-all duration-300 shrink-0">
+            <i class="bi bi-download"></i> Tải về
+          </div>
+        </a>
+
+        <!-- App 5: X-plore -->
+        <a href="#" class="app-card glass-card rounded-2xl p-4 flex items-center justify-between transition-all duration-300 cursor-pointer group" tabindex="0">
+          <div class="flex items-center gap-4">
+            <div class="icon-box w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center text-white text-3xl">
+              <i class="bi bi-folder2-open"></i>
+            </div>
+            <div>
+              <h2 class="font-bold text-lg text-white tracking-wide">X-plore v4.49.10</h2>
+              <p class="text-xs md:text-sm text-slate-400 mt-0.5">Quản lý tập tin (Premium)</p>
+            </div>
+          </div>
+          <div class="btn-download bg-[#222] border border-white/10 text-white font-bold px-5 py-2.5 rounded-xl flex items-center gap-2 text-sm transition-all duration-300 shrink-0">
+            <i class="bi bi-download"></i> Tải về
+          </div>
+        </a>
+
+        <!-- App 6: Projectivy Launcher -->
+        <a href="#" class="app-card glass-card rounded-2xl p-4 flex items-center justify-between transition-all duration-300 cursor-pointer group" tabindex="0">
+          <div class="flex items-center gap-4">
+            <div class="icon-box w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center text-white text-3xl">
+              <i class="bi bi-grid-fill"></i>
+            </div>
+            <div>
+              <h2 class="font-bold text-lg text-white tracking-wide">Projectivy Launcher</h2>
+              <p class="text-xs md:text-sm text-slate-400 mt-0.5">Giao diện Tivi mượt mà</p>
+            </div>
+          </div>
+          <div class="btn-download bg-[#222] border border-white/10 text-white font-bold px-5 py-2.5 rounded-xl flex items-center gap-2 text-sm transition-all duration-300 shrink-0">
+            <i class="bi bi-download"></i> Tải về
+          </div>
+        </a>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- JAVASCRIPT: XỬ LÝ ĐIỀU KHIỂN REMOTE TIVI -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = Array.from(document.querySelectorAll(".app-card"));
+      if (cards.length === 0) return;
+
+      // Focus thẻ đầu tiên khi vừa tải trang
+      cards[0].focus();
+
+      // Xử lý sự kiện phím D-PAD (Lên/Xuống/Trái/Phải/OK)
+      document.addEventListener("keydown", (e) => {
+        const activeElem = document.activeElement;
+        const currentIndex = cards.indexOf(activeElem);
+
+        if (currentIndex === -1) {
+          if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+            cards[0].focus();
+            e.preventDefault();
+          }
+          return;
+        }
+
+        const isDesktop = window.innerWidth >= 768; 
+        const cols = isDesktop ? 2 : 1; 
+        let nextIndex = currentIndex;
+
+        switch (e.key) {
+          case "ArrowRight":
+            if (currentIndex + 1 < cards.length) nextIndex = currentIndex + 1;
+            break;
+          case "ArrowLeft":
+            if (currentIndex - 1 >= 0) nextIndex = currentIndex - 1;
+            break;
+          case "ArrowDown":
+            if (currentIndex + cols < cards.length) nextIndex = currentIndex + cols;
+            break;
+          case "ArrowUp":
+            if (currentIndex - cols >= 0) nextIndex = currentIndex - cols;
+            break;
+          case "Enter":
+            activeElem.click(); 
+            break;
+          default:
+            return;
+        }
+
+        if (nextIndex !== currentIndex) {
+          e.preventDefault();
+          cards[nextIndex].focus();
+          cards[nextIndex].scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
